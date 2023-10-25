@@ -23,6 +23,16 @@ python app/my_script.py
 
 ## Setup - Unemployment Report
 
+Obtain an [API Key from AlphaVantage](https://www.alphavantage.co/support/#api-key) or from the professor (`ALPHAVANTAGE_API_KEY`).
+
+Create a ".env" file and paste in the following contents:
+
+```sh
+# this is the ".env" file...
+
+ALPHAVANTAGE_API_KEY="_________"
+```
+
 Install Packages:
 
 ```sh
