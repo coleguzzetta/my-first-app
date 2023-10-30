@@ -1,7 +1,7 @@
 # my-first-app
 
 
-## Setup - My Script
+## Setup - Environment
 
 Create and activate a virtual environment:
 
@@ -12,16 +12,7 @@ conda activate my-first-env
 ```
 
 
-## Usage - My Script
-
-Run the example script:
-
-```sh
-python app/my_script.py
-```
-
-
-## Setup - Unemployment Report
+## Setup
 
 Install Packages:
 
@@ -37,9 +28,18 @@ Create a ".env" file and paste in the following contents:
 # this is the ".env" file...
 
 ALPHAVANTAGE_API_KEY="_________"
+
+SENDGRID_API_KEY="_________"
+SENDER_ADDRESS="_________"
 ```
 
-## Usage - Unemployment Report
+## Usage
+
+Run the example script:
+
+```sh
+python app/my_script.py
+```
 
 Run the example script:
 
