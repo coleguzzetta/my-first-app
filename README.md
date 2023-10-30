@@ -23,6 +23,12 @@ python app/my_script.py
 
 ## Setup - Unemployment Report
 
+Install Packages:
+
+```sh
+pip install -r requirements.txt
+```
+
 Obtain an [API Key from AlphaVantage](https://www.alphavantage.co/support/#api-key) or from the professor (`ALPHAVANTAGE_API_KEY`).
 
 Create a ".env" file and paste in the following contents:
@@ -32,13 +38,6 @@ Create a ".env" file and paste in the following contents:
 
 ALPHAVANTAGE_API_KEY="_________"
 ```
-
-Install Packages:
-
-```sh
-pip install requirements.txt
-```
-
 
 ## Usage - Unemployment Report
 
