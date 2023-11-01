@@ -1,7 +1,7 @@
 # my-first-app
 
 
-## Setup - Environment
+## Setup
 
 Create and activate a virtual environment:
 
@@ -10,9 +10,6 @@ conda create -n my-first-env python=3.10
 
 conda activate my-first-env
 ```
-
-
-## Setup
 
 Install Packages:
 
