@@ -41,8 +41,14 @@ Run the example script:
 python app/my_script.py
 ```
 
-Run the example script:
+Run the Unemployment Report:
 
 ```sh
 python app/unemployment_report.py
+```
+
+Run the Email Service:
+
+```sh
+python app/email_service.py
 ```
