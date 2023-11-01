@@ -41,7 +41,7 @@ python app/my_script.py
 Run the Unemployment Report:
 
 ```sh
-python -m app.unemployment-report
+python -m app.unemployment_report
 ```
 
 Run the Email Service:
