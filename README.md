@@ -49,3 +49,9 @@ Run the Email Service:
 ```sh
 python app/email_service.py
 ```
+
+Run the Mod:
+
+```sh
+python app/my_mod.py
+```
