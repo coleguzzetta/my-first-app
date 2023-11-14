@@ -1,3 +1,4 @@
+
 import os
 
 from dotenv import load_dotenv
@@ -10,6 +11,8 @@ load_dotenv() # go look in the .env file for any env vars
 
 SENDGRID_API_KEY = os.getenv("SENDGRID_API_KEY")
 SENDER_ADDRESS = os.getenv("SENDER_ADDRESS")
+
+
 
 
 def send_email(recipient_address=SENDER_ADDRESS, subject="[Shopping Cart App] Testing 123", html_content="<p>Hello World</p>"):
@@ -36,12 +39,14 @@ def send_email(recipient_address=SENDER_ADDRESS, subject="[Shopping Cart App] Te
         print(err)
         return None
 
+
+
 if __name__ == "__main__":
 
-    # ONLY WANT TO DO IF RUNNING FROM COMMAND LINE
+    # ONLY WANT TO DO IF RUNNING THIS FILE FROM COMMAND LINE
     # (NOT IF IMPORTING A FUNCTION FROM THIS FILE)
-
     user_address = input("Please enter your email address: ")
+
 
     my_content = """
 
@@ -61,5 +66,4 @@ if __name__ == "__main__":
             <li>Strawberry</li>
         </ul>
     """
-
     send_email(html_content=my_content, recipient_address=user_address)
