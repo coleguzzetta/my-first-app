@@ -6,18 +6,6 @@ from IPython.core.display import HTML
 from pgeocode import Nominatim
 from pandas import DataFrame
 
-"""Degree sign:"""
-
-DEGREE_SIGN = u"\N{DEGREE SIGN}"
-
-
-# todo: write some python code here
-
-zip_code = input("Please input a zip code (e.g. '06510'): ") or "06510"
-print("ZIP CODE:", zip_code)
-
-
-"""# Demo"""
 
 def to_image(url):
     return '<img src="'+ url + '" width="32" >'
@@ -27,7 +15,7 @@ def chopped_date(start_time):
     return start_time[5:10]
 
 
-def forecast_demo(zip_code, country_code="US"):
+def weather_data(zip_code="06510", country_code="US"):
     """
     Displays a seven day weather forecast for the provided zip code.
 
@@ -55,8 +43,18 @@ def forecast_demo(zip_code, country_code="US"):
 
     periods = parsed_forecast_response["properties"]["periods"]
     daytime_periods = [period for period in periods if period["isDaytime"] == True]
+    return daytime_periods
 
-    for period in daytime_periods:
+
+if __name__ == "__main__":
+
+    DEGREE_SIGN = u"\N{DEGREE SIGN}"
+
+    zip_code = input("Please input a zip code (e.g. '06510'): ") or "06510"
+    country_code = input("Please input an appropriate country code (e.g. 'US'): ") or "US"
+    print(str(zip_code) + ", " + str(country_code))
+
+    for period in weather_data(zip_code, country_code):
         #print(period.keys())
         print("-------------")
         print(period["name"], period["startTime"][0:7])
@@ -65,7 +63,7 @@ def forecast_demo(zip_code, country_code="US"):
         display(Image(url=period["icon"]))
 
 
-    df = DataFrame(daytime_periods)
+    df = DataFrame(weather_data(zip_code, country_code))
 
     df["date"] = df["startTime"].apply(chopped_date)
 
@@ -95,8 +93,6 @@ def forecast_demo(zip_code, country_code="US"):
     # return df
     print("---")
     print("SEVEN DAY FORECAST")
-    print("LOCATION:", f"{geo.place_name}, {geo.state_code}".upper())
+    print("LOCATION:", f"{Nominatim(country_code).query_postal_code(zip_code).place_name}, {Nominatim(country_code).query_postal_code(zip_code).state_code}".upper())
     print("---")
-    return HTML(df.to_html(escape=False, formatters=dict(icon=to_image)))
-
-forecast_demo(zip_code)
+    HTML(df.to_html(escape=False, formatters=dict(icon=to_image)))
