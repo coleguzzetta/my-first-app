@@ -3,6 +3,9 @@ plotly
 pandas
 python-dotenv
 sendgrid==6.5.0
+pgeocode
+IPython
+flask
 
 # Test
 
