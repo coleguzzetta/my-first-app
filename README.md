@@ -56,6 +56,18 @@ Run the Mod:
 python app/my_mod.py
 ```
 
+Run the Weather App:
+
+```sh
+python app/weather.py
+```
+
+Run the Web App:
+
+```sh
+FLASK_APP=web_app flask run
+```
+
 ## Testing
 
 Run tests:
