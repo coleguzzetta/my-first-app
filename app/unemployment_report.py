@@ -1,12 +1,11 @@
 
 # IMPORTS AT THE TOP
 
-import os
 import json
 from pprint import pprint
 from statistics import mean
 
-from dotenv import load_dotenv
+from app.alpha import API_KEY
 import requests
 from plotly.express import line
 
@@ -15,10 +14,6 @@ from app.email_service import send_email
 print("BACK IN 'UNEMPLOYMENT REPORT' FILE")
 
 # ENVIRONMENT VARIABLES AND CONSTANTS
-
-load_dotenv() # go look in the .env file for any env vars
-
-API_KEY = os.getenv("ALPHAVANTAGE_API_KEY")
 
 #breakpoint()
 
