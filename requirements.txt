@@ -10,3 +10,6 @@ flask
 # Test
 
 pytest
+
+# PRODUCTION SERVER NEEDS THIS TO DEPLOY WEB APP
+gunicorn
